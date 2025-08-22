@@ -1,33 +1,23 @@
-import type { Metadata } from 'next'
-import { Poppins, Open_Sans } from 'next/font/google'
-import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-poppins',
-})
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-open-sans',
-})
+import type React from "react"
+import type { Metadata } from "next"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: 'Steven Chen - Entrepreneur, Investor, Advocate',
-  description: 'Personal website of Steven Chen - entrepreneur, angel investor, prototyper, Asian American advocate, photographer, and violinist.',
-  keywords: 'Steven Chen, entrepreneur, angel investor, Asian American advocate, violinist, photographer',
-  authors: [{ name: 'Steven Chen' }],
+  title: "Steven Chen - Entrepreneur, Investor, Advocate",
+  description:
+    "Personal website of Steven Chen - entrepreneur, angel investor, prototyper, Asian American advocate, photographer, and violinist.",
+  keywords: "Steven Chen, entrepreneur, angel investor, Asian American advocate, violinist, photographer",
+  authors: [{ name: "Steven Chen" }],
   openGraph: {
-    title: 'Steven Chen - Entrepreneur, Investor, Advocate',
-    description: 'Personal website of Steven Chen - entrepreneur, angel investor, prototyper, Asian American advocate, photographer, and violinist.',
-    url: 'https://stevenchen.me',
-    siteName: 'Steven Chen',
-    type: 'website',
+    title: "Steven Chen - Entrepreneur, Investor, Advocate",
+    description:
+      "Personal website of Steven Chen - entrepreneur, angel investor, prototyper, Asian American advocate, photographer, and violinist.",
+    url: "https://stevenchen.me",
+    siteName: "Steven Chen",
+    type: "website",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -36,12 +26,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${poppins.variable} ${openSans.variable} font-sans antialiased bg-navy text-white`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased" style={{ fontFamily: "Outfit, ui-sans-serif, system-ui, sans-serif" }}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="light"
+          forcedTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >
